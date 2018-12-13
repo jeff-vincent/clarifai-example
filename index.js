@@ -10,7 +10,7 @@ const upload = multer()
 const resultsTemplate = pug.compileFile("public/results.pug")
 
 const clarifai = new Clarifai.App({
-  apiKey: "63391f13d6cd416fa4ae198c12e8e0a6"
+  apiKey: "{YOUR_API_KEY}"
 })
 app.get("/", (req, res) => {
   res.sendFile("public/index.html", {
