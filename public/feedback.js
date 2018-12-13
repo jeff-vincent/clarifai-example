@@ -1,6 +1,9 @@
+
 function yes() {
-  const feedback = 'yes'
-  console.log("yes works")
+  const image = document.getElementById('img').src
+  const feedback = {
+  	image: image,
+  }
   sendPost(feedback)
 }
 function no() {
@@ -9,8 +12,29 @@ function no() {
   sendPost(feedback)
 }
 function sendPost(feedback) {
-  console.log(`POST request will be made with ${feedback}`)
+  
+postData(`http://localhost:3000/feedback`, feedback)
+  .then(data => console.log(JSON.stringify(data)))
+
+
+function postData(url = ``, data = {}) {
+    return fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(console.log(data))
+  }
 }
+
+
 function nextImage() {
-  console.log('GET request for index')
+  fetch('https://localhost:3000')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data) // Prints result from `response.json()` in getRequest
+  })
 }
