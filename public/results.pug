@@ -1,0 +1,11 @@
+html
+  head
+    link(href="style.css", rel="stylesheet")
+    script(src="feedback.js")
+  body
+    img(src="data:image/png;base64," + image)
+    each concept in concepts
+      p #{concept.name}: #{concept.value}
+    button(onclick="yes()", class="label-button") Correct
+    button(onclick="no()", class="label-button") Incorrect
+    button(onclick="nextImage()", class="label-button") Next Image

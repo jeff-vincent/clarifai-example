@@ -1,0 +1,25 @@
+{
+  "name": "clarifai-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeff-vincent/clarifai-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeff-vincent/clarifai-example/issues"
+  },
+  "homepage": "https://github.com/jeff-vincent/clarifai-example#readme",
+  "dependencies": {
+    "clarifai": "^2.9.0",
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
+    "pug": "^2.0.3"
+  }
+}
