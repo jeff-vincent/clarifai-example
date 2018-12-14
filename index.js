@@ -14,7 +14,7 @@ const upload = multer()
 const resultsTemplate = pug.compileFile("public/results.pug")
 
 const clarifai = new Clarifai.App({
-  apiKey: '{YOUR_API_KEY}'
+  apiKey: '63391f13d6cd416fa4ae198c12e8e0a6'
 });
 
 app.get("/", (req, res) => {
@@ -40,7 +40,6 @@ app.post("/upload", upload.single("photo"), (req, res) => {
 })
 
 app.post("/feedback", (req, res) => {
-  console.log(req)
   const image = req.body.image;	
   const value = req.body.value;
   const id = req.body.id;
@@ -55,6 +54,7 @@ app.post("/feedback", (req, res) => {
       'eventType':  'annotation',
     }
   })
+  console.log(res.json())
 })
 
 app.use(express.static("public"))
