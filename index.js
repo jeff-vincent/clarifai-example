@@ -45,17 +45,16 @@ app.post("/feedback", (req, res) => {
   const value = req.body.value;
   const id = req.body.id;
   clarifai.models.feedback(Clarifai.GENERAL_MODEL, image, {
-  id: 'f0ce328d16b94d1dacecaf9ee0d99901',
-  data: {
-    concepts: [
-      {'id': id, 'value': value },
-    ]
-  },
-  info: {
-    'eventType':  'annotation',
-  }
-})
-
+    id: 'f0ce328d16b94d1dacecaf9ee0d99901',
+    data: {
+      concepts: [
+        {'id': id, 'value': value },
+      ]
+    },
+    info: {
+      'eventType':  'annotation',
+    }
+  })
 })
 
 app.use(express.static("public"))
