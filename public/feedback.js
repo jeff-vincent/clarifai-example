@@ -39,12 +39,3 @@ function postData(url = ``, data = {}) {
     .then(console.log(data))
   }
 }
-
-
-function nextImage() {
-  fetch('https://localhost:3000')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data)
-  })
-}
