@@ -54,7 +54,9 @@ app.post("/feedback", (req, res) => {
       'eventType':  'annotation',
     }
   })
-  console.log(res.json())
+  if (res.statusCode === 200) {
+  console.log('Feedback successfully submitted')
+  }
 })
 
 app.use(express.static("public"))
