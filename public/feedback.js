@@ -1,4 +1,3 @@
-
 function evergreen() {
   const image = document.getElementById('img').src;
   const value = true;
@@ -10,6 +9,7 @@ function evergreen() {
   };
   sendPost(feedback)
 }
+
 function deciduous() {
   const image = document.getElementById('img').src;
   const value = true;
@@ -21,21 +21,22 @@ function deciduous() {
   }
   sendPost(feedback)
 }
+
 function sendPost(feedback) {
   
-postData(`http://localhost:3000/feedback`, feedback)
-  .then(data => console.log(JSON.stringify(data)))
+  postData(`http://localhost:3000/feedback`, feedback)
+    .then(data => console.log(JSON.stringify(data)))
 
 
-function postData(url = ``, data = {}) {
-    return fetch(url, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json; charset=utf-8",
-        },
-        body: JSON.stringify(data),
-    })
-    .then(response => response.json())
-    .then(console.log(data))
-  }
+  function postData(url = ``, data = {}) {
+      return fetch(url, {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json; charset=utf-8",
+          },
+          body: JSON.stringify(data),
+      })
+      .then(response => response.json())
+      .then(console.log(data))
+    }
 }
