@@ -4,8 +4,9 @@ html
     script(src="feedback.js")
   body
     img#img(src="data:image/png;base64," + image)
+    #id
     each concept in concepts
       p #{concept.name}: #{concept.value}
-    button(onclick="yes()", class="label-button") Correct
-    button(onclick="no()", class="label-button") Incorrect
+    button(onclick="evergreen()", class="label-button") Evergreen
+    button(onclick="deciduous()", class="label-button") Deciduous
     button(onclick="nextImage()", class="label-button") Next Image

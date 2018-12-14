@@ -1,14 +1,24 @@
 
-function yes() {
-  const image = document.getElementById('img').src
+function evergreen() {
+  const image = document.getElementById('img').src;
+  const value = true;
+  const id = 'evergreen';
   const feedback = {
   	image: image,
-  }
+  	value: value,
+  	id: id,
+  };
   sendPost(feedback)
 }
-function no() {
-  const feedback = 'no'
-  console.log("no works")
+function deciduous() {
+  const image = document.getElementById('img').src;
+  const value = true;
+  const id = 'deciduous'
+  const feedback = {
+  	image: image,
+  	value: value,
+  	id: id,
+  }
   sendPost(feedback)
 }
 function sendPost(feedback) {
@@ -35,6 +45,6 @@ function nextImage() {
   fetch('https://localhost:3000')
   .then(response => response.json())
   .then(data => {
-    console.log(data) // Prints result from `response.json()` in getRequest
+    console.log(data)
   })
 }

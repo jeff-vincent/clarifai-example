@@ -14,8 +14,9 @@ const upload = multer()
 const resultsTemplate = pug.compileFile("public/results.pug")
 
 const clarifai = new Clarifai.App({
-  apiKey: "{YOUR_API_KEY}"
-})
+  apiKey: "63391f13d6cd416fa4ae198c12e8e0a6"
+});
+
 app.get("/", (req, res) => {
   res.sendFile("public/index.html", {
     root: __dirname
@@ -39,12 +40,15 @@ app.post("/upload", upload.single("photo"), (req, res) => {
 })
 
 app.post("/feedback", (req, res) => {
-	
-  clarifai.models.feedback(Clarifai.GENERAL_MODEL,  req.body.image, {
+  console.log(req)
+  const image = req.body.image;	
+  const value = req.body.value;
+  const id = req.body.id;
+  clarifai.models.feedback(Clarifai.GENERAL_MODEL, image, {
   id: 'f0ce328d16b94d1dacecaf9ee0d99901',
   data: {
     concepts: [
-      {'id': 'evergreen', 'value': true },
+      {'id': id, 'value': value },
     ]
   },
   info: {
