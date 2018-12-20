@@ -22,3 +22,9 @@ Run the app:
 node index.js
 ```
 View the app running on `http://localhost:3000`. 
+
+--------------------------------------
+
+If you found this helpful, please leave a :star:.
+
+Thanks!
