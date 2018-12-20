@@ -1,6 +1,6 @@
 # clarifai-example
 
-This repository is meant as an accompanyment to its associated [Medium post](http://medium.com).
+This repository is meant as an accompanyment to its associated [Medium post](https://stories.mlh.io/how-to-train-your-drag-err-image-recognition-app-a299896fa583).
 
 ## Installation:
 
