@@ -37,6 +37,6 @@ function sendPost(feedback) {
           body: JSON.stringify(data),
       })
       .then(response => response.json())
-      .then(console.log(data))
+      .then(data => console.log(data))
     }
 }
